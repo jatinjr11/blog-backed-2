@@ -6,18 +6,21 @@ import dotenv from "dotenv";
 dotenv.config();
 // ✅ Update path below to match the actual filename
 //const serviceAccount = require("./sachin.json");
+
+//const formattedKey = PRIVATE_KEY.replace(/\\n/g, '\n');
+
 const serviceAccount = {
-  "type": process.env.TYPE,
-  "project_id":process.env.PROJECT_ID,
-  "private_key_id": process.env.PRIVATE_KEY_ID,
-  "private_key": process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
-  "client_id": process.env.CLIENT_ID,
-  "client_email": process.env.CLIENT_EMAIL,
-  "auth_uri": process.env.AUTH_URI,
-  "toke_uri": process.env.TOKEN_URI,
-  "auth_provider_x509_cert_url": process.env.AUTH_PROVIDER_X509_CERT_URL,
-  "client_x509_cert_url": process.env.CLIENT_X509_CERT_URL,
-  "universe_domain": process.env.UNIVERSE_DOMAIN
+  "type": process.env.type,
+  "project_id":process.env.project_id,
+  "private_key_id": process.env.private_key_id,
+  "private_key": process.env.private_key.replace(/\\n/g, '\n'),
+  "client_id": process.env.client_id,
+  "client_email": process.env.client_email,
+  "auth_uri": process.env.auth_uri,
+  "toke_uri": process.env.token_uri,
+  "auth_provider_x509_cert_url": process.env.auth_provider_x509_cert_url,
+  "client_x509_cert_url": process.env.client_x509_cert_url,
+  "universe_domain": process.env.universe_domain
 }
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
